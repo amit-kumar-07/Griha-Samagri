@@ -1,0 +1,265 @@
+[5:36 pm, 26/09/2023] Suman CSE: * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+  }
+  body {
+    background: url(bg.jpg);
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
+  }
+  header {
+    width: 100%;
+    height: 140px; /* Increase navbar height a bit more */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 99;
+    box-shadow: 0 0 10px #000;
+    background-color: #007bff;
+    color: #fff;
+  }
+  #chk1 {
+    display: none;
+  }
+  i {
+    color: #fff;
+    cursor: pointer;
+  }
+  header .logo {
+    flex: 1;
+    color: #fff;
+    margin-left: 50px;
+    text-transform: uppercase;
+    font-size: 24px; /* Increase logo font size */
+  }
+  header ul {
+    flex: 2;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  header ul li {
+    list-style: none;
+  }
+  header ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    font-size: 20px; /* Increase navbar button font size */
+  }
+  header ul li a:hover {
+    border-bottom: 2px solid rgb(189, 222, 6);
+  }
+  header .menu {
+    font-size: 2.5em;
+    display: none;
+  }
+  .nav-icons {
+    font-size: 36px; /* Increase icon size */
+    margin-right: 10px;
+  }
+  
+  @media (max-width: 1000px) {
+    .search-box button {
+      position: absolute;
+    }
+    header ul {
+      position: fixed;
+      top: 140px; /* Adjust top position */
+      right: -100%;
+      background: rgba(241, 2, 2, 0.5);
+      height: calc(100vh - 140px); /* Adjust height */
+      width: 50%;
+      flex-direction: column;
+      align-items: center;
+      transition: right 0.5s linear;
+    }
+    header .menu {
+      display: block;
+      width: 100px;
+      text-align: center;
+    }
+    #chk1:checked ~ ul {
+      right: 0;
+    }
+  }
+  @import url("https://fonts.googleapis.com/css?family=Inconsolata:700");
+  
+  .container {
+    position: absolute;
+    margin: auto;
+    top: 140px; /* Adjust top position */
+    left: 0;
+    right: 0;
+    width: 300px;
+    height: 160px; /* Increase height to fit content */
+  }
+  
+  .container .location-buttons {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+  }
+  
+  .container .location-buttons button {
+    margin-right: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .container .search {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    background: crimson;
+    border-radius: 50%;
+    transition: all 1s;
+    z-index: 4;
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
+  }
+  
+  .container .search:hover {
+    cursor: pointer;
+  }
+  
+  .container .search::before {
+    content: "";
+    position: absolute;
+    margin: auto;
+    top: 22px;
+    right: 0;
+    bottom: 0;
+    left: 22px;
+    width: 12px;
+    height: 2px;
+    background: white;
+    transform: rotate(45deg);
+    transition: all 0.5s;
+  }
+  
+  .container .search::after {
+    content: "";
+    position: absolute;
+    margin: auto;
+    top: -5px;
+    right: 0;
+    bottom: 0;
+    left: -5px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 2px solid white;
+    transition: all 0.5s;
+  }
+  
+  .container input {
+    font-family: "Inconsolata", monospace;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    outline: none;
+    border: none;
+    background: crimson;
+    color: white;
+    text-shadow: 0 0 10px crimson;
+    padding: 0 80px 0 20px;
+    border-radius: 30px;
+    box-shadow: 0 0 25px 0 crimson, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+    transition: all 1s;
+    opacity: 0;
+    z-index: 5;
+    font-weight: bolder;
+    letter-spacing: 0.1em;
+  }
+  
+  .container input:hover {
+    cursor: pointer;
+  }
+  
+  .container input:focus {
+    width: 300px;
+    opacity: 1;
+    cursor: text;
+  }
+  
+  .container input:focus ~ .search {
+    right: -250px;
+    background: #151515;
+    z-index: 6;
+  }
+  
+  .container input::placeholder {
+    color: white;
+    opacity: 0.5;
+    font-weight: bolder;
+  }
+  [5:37 pm, 26/09/2023] Suman CSE: <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Grih Samgarhi</title>
+      <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+      <!-- Include FontAwesome CSS -->
+      <link rel="stylesheet" href="style.css">
+      
+    </head>
+    <body>
+      <header>
+        <input type="checkbox" name="" id="chk1" />
+        <div class="logo"><h1>Girha Samgarhi</h1></div>
+  
+        <ul>
+          <li>
+            <a href="#"><i class="fas fa-truck nav-icons"></i>CourierHome</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-store nav-icons"></i>Sell</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-question-circle nav-icons"></i>Help</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-envelope nav-icons"></i>Contact</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-sign-in-alt nav-icons"></i>Sign In</a>
+          </li>
+        </ul>
+        <div class="menu">
+          <label for="chk1">
+            <i class="fa fa-bars"></i>
+          </label>
+        </div>
+      </header>
+      <div class="container">
+        <input type="text" placeholder="Search..." />
+        <div class="search"></div>
+      </div>
+    </body>
+  </html>
